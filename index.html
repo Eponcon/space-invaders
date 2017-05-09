@@ -33,10 +33,12 @@
 	
 	
 <style>
-        @font-face {
+    
+    @font-face {
 	font-family: "Fipps";
 	src: url("font/Fipps-Regular.otf");
-}
+    }
+    
     body{
         margin :0px;
         padding : 0px;
@@ -50,18 +52,21 @@
         background-position: center;
         background-size: auto;
         overflow : hidden;
-         font-family: "Fipps";
-         }
+        font-family: "Fipps";
+        }
     
    
     .container {
         width:1200px;
         height: 100%;
+/*
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+*/
     }
     
+     /* ecran accueil*/
     .accueil {
         display:flex;
         justify-content: center;
@@ -89,27 +94,46 @@
         padding-bottom: 20px;
         
     }
-        .accueil p:hover {
+    
+    .accueil p:hover {
             cursor:pointer;
             background-color: white;
-     
+    }
+    
+     .tete-gugus {
+        margin-top :40%;
     }
     
     
-    .tete-gugus {
-        margin-top :35%;
-    }
     
+    /*ecran jeux*/
+   
     .score {
         border: solid 3px red;
         width: 100%;
         height: 5%;
     }
-    .jeux {
-        border: solid 3px black;
-          width: 100%;
-        height: 70%;
+    
+    
+    
+    .ecran-jeux {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+    
+    /*div où il va y avoir les tetes de gugus qui descendent*/
+    .jeux {
+        display: flex;
+        flex-wrap: wrap;
+        height: 70%;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+    }
+    
     .blc-vie {
         border-top: solid 1px #a00000;
         width: 100%;
@@ -126,10 +150,35 @@
         
     }
     
-    .cache {
-        display:none;
+    .seringue-tueuse {
+        width: 100%; 
+        position: absolute;
+        top: 90%;
     }
-
+    
+    .blc-lignes {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+    
+    }
+    
+    .ligne-1, 
+    .ligne-2,
+    .ligne-3,
+    .ligne-4,
+    .ligne-5{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    
+        
+    }
+    
+    .cache {
+        display: none;
+    }
     
 </style>	
 </head>
@@ -137,7 +186,7 @@
 <body>
 <div class="container">
     
-    <section class="accueil bg-1">
+    <section class="accueil ">
        
        <h2>Space Gogols</h2>
        <p class="btn-jouer">Jouer</p>
@@ -146,19 +195,28 @@
            <img src="images/black.png">
            <img src="images/blonde.png">
            <img src="images/chinois.png">
-           <img src="images/roux.png">
+           <img src="images/roux-2.png">
            
        </div>
         
     </section>
     
-    <section class="jeux cache">
-        <div class="score">
-        </div>
+    <section class="ecran-jeux cache">
+        <div class="score"> </div>
 
     
         <div class="jeux"> 
-
+                
+                <div class="blc-lignes">
+                    <div class="ligne-1"></div>
+                    <div class="ligne-2"></div>
+                    <div class="ligne-3"></div>
+                    <div class="ligne-4"></div>
+                    <div class="ligne-5"></div>
+                </div>
+               
+            <div class="seringue-tueuse"></div>    
+                
         </div>
     
     
@@ -174,12 +232,6 @@
     </section>
     
 </div>
-
-
-
-
-
-
 
 
 
