@@ -99,14 +99,12 @@ document.body.onkeydown = function() {
     
 }
 
-<<<<<<< HEAD
 
-=======
 //var pilluleTireuse = document.querySelector(".pillule");
 //
 //pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
 //  restreindre au container la seringue
->>>>>>> 92f07c818aaab8bc675054f179c132f01ed8101d
+
 
 
 
@@ -222,7 +220,7 @@ function bas9 () {
     ecranPerdu.classList.remove("cache");
     
 }
-<<<<<<< HEAD
+
 setTimeout(bas, 19000);
 
 function push (){
@@ -232,9 +230,9 @@ function push (){
 
 // quand la pillule touche une tete elle disparait/explose
 
-=======
-setTimeout(bas9, 19000);
->>>>>>> 92f07c818aaab8bc675054f179c132f01ed8101d
+
+
+
 
 // boutton rejouer
 var reJouer = document.querySelector(".btn-rejouer");
@@ -247,11 +245,11 @@ function lancerRejouer() {
 
 // barre d'espace lance/tire des pillules
 
-<<<<<<< HEAD
+
 //console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
-=======
+
 //// quand la pillule touche une tete elle disparait/explose
->>>>>>> 92f07c818aaab8bc675054f179c132f01ed8101d
+
 
 //console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
 
