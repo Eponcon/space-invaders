@@ -79,9 +79,9 @@ var largeur=document.querySelector('.container').availWidth;
     var e = event.keyCode;
 //    if ( > 360){
         if (e == 37) { //left function
-            document.querySelector(".seringue-tueuse").style.left = (parseInt(document.querySelector(".seringue-tueuse").style.left)) - 10 + "px";
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
         } else if (e == 39) { //right function
-            document.querySelector(".seringue-tueuse").style.left = (parseInt(document.querySelector(".seringue-tueuse").style.left)) + 10 + "px";
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
         }
 
     
