@@ -90,6 +90,100 @@ document.body.onkeydown = function() {
     console.log(largeur.getBoundingClientRect());
 }
 
+var divTete = document.querySelector(".blc-lignes");
+
+divTete.style.left = 0;
+divTete.style.top = 0;
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 2000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 3000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 4000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 5000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 6000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 7000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 8000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 9000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 10000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 11000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 12000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 13000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 14000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 15000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 16000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 17000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 18000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 19000);
 
 // barre d'espace lance/tire des pillules
 
