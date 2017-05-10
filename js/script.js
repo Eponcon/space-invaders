@@ -101,9 +101,9 @@ document.body.onkeydown = function() {
 }
 // on fait apparaitre la pillule
 
-var pilluleTireuse = document.querySelector(".pillule");
-
-pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
+//var pilluleTireuse = document.querySelector(".pillule");
+//
+//pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
 //  restreindre au container la seringue
 
 
@@ -213,22 +213,16 @@ setTimeout(bas9, 19000);
 var reJouer = document.querySelector(".btn-rejouer");
 
 reJouer.addEventListener("click", lancerRejouer);
-
 function lancerRejouer() {
-    ecranPerdu.classList.add("cache");
-    ecranJeux.classList.remove("cache");
+   ecranPerdu.classList.add("cache");
+   ecranJeux.classList.remove("cache");
 }
-
 
 // barre d'espace lance/tire des pillules
 
-// quand la pillule touche une tete elle disparait/explose
+//// quand la pillule touche une tete elle disparait/explose
 
-
-
-
-
-console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
+//console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
 
 
 
