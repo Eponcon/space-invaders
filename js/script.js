@@ -90,6 +90,11 @@ document.body.onkeydown = function() {
     console.log(largeur.getBoundingClientRect());
 }
 
+
+
+// modifier la position de la div qui contient la tête des gugus
+
+
 var divTete = document.querySelector(".blc-lignes");
 
 divTete.style.left = 0;
@@ -189,7 +194,7 @@ setTimeout(bas, 19000);
 
 // quand la pillule touche une tete elle disparait/explose
 
-// modifier la position de la div qui contient la tête des gugus
+
 
 
 
