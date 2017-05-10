@@ -3,6 +3,7 @@
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
 
+
 // click sur le bouton jouer pour accéder à l'écran jeux
 var btnJouer = document.querySelector(".btn-jouer");
 
@@ -20,16 +21,18 @@ function lancerJeux() {
 var ligneUne = document.querySelector(".ligne-1");
 console.log(ligneUne);
 
-for (var i = 0; i < 11; i++) {
-    ligneUne.innerHTML += "<img src='images/geek.png' width='60' height='60'>" + "" + "</img>";
-}
+//for (var i = 0; i < 11; i++) {
+    for( char of "abcdefghijk" ){
+    ligneUne.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>" + "" + "</img>";
+}                        
 
     //ligne 2 de roux
 var ligneDeux = document.querySelector(".ligne-2");
 console.log(ligneUne);
 
-for (var i = 0; i < 11; i++) {
-    ligneDeux.innerHTML += "<img src='images/roux-2.png' width='60' height='60'>" + "" + "</img>";
+//for (var i = 0; i < 11; i++) {
+for(char of "abcdefghijk"){
+    ligneDeux.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>" + "" + "</img>";
 }
 
     //ligne 3 blonde
@@ -37,8 +40,9 @@ var ligneTrois = document.querySelector(".ligne-3");
 console.log(ligneUne);
 
 
-for (var i = 0; i < 11; i++) {
-    ligneTrois.innerHTML += "<img src='images/blonde.png' width='60' height='60'>" + "" + "</img>";
+//for (var i = 0; i < 11; i++) {
+    for(char of "abcdefghijk"){
+    ligneTrois.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>" + "" + "</img>";
 }
 
     //ligne 4 black
@@ -46,8 +50,9 @@ var ligneQuatre = document.querySelector(".ligne-4");
 console.log(ligneUne);
 
 
-for (var i = 0; i < 11; i++) {
-    ligneQuatre.innerHTML += "<img src='images/black.png' width='60' height='60'>" + "" + "</img>";
+//for (var i = 0; i < 11; i++) {
+     for(char of "abcdefghijk"){
+    ligneQuatre.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>" + "" + "</img>";
 }
 
     //ligne 5 chinois
@@ -55,8 +60,9 @@ var ligneCinque = document.querySelector(".ligne-5");
 console.log(ligneUne);
 
 
-for (var i = 0; i < 11; i++) {
-    ligneCinque.innerHTML += "<img src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
+//for (var i = 0; i < 11; i++) {
+    for(char of "abcdefghijk"){
+    ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
 }
 
 
@@ -89,7 +95,11 @@ var largeur=document.querySelector('.container').availWidth;
     
     console.log(seringueTueuse.getBoundingClientRect());
 }
+// on fait apparaitre la pillule
 
+var pilluleTireuse = document.querySelector(".pillule");
+
+pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
 //  restreindre au container la seringue
 
 // barre d'espace lance/tire des pillules
@@ -98,6 +108,7 @@ var largeur=document.querySelector('.container').availWidth;
 
 // modifier la position des tetes
 
+console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
 
 
 
