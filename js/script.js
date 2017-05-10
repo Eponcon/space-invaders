@@ -70,31 +70,39 @@ seringueTueuse.innerHTML += "<img src='images/seringue.png'>" + "" + "</img>";
 
 // touche gauche et droite pour déplacer la seringue
 
-document.querySelector(".seringue-tueuse").style.left = 0;
 
 
-document.body.onkeydown = function() {
-var largeur = document.querySelector('.container').availWidth;
-    
-    var e = event.keyCode;
-//    if ( > 360){
-    if (e == 37) { //left function
-            seringueTueuse.style.left = 
-            (parseInt(seringueTueuse.style.left)) - 10 + "px";
-        } else if (e == 39) { //right function
-            
-            seringueTueuse.style.left = 
-            (parseInt(seringueTueuse.style.left)) + 10 + "px";
-        } 
-    
 
-    
 
-    
-    
-    
-    console.log(seringueTueuse.getBoundingClientRect());
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  restreindre au container la seringue
 
