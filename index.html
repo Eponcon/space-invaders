@@ -67,22 +67,24 @@
 	    }
 	    
 	     /* ecran accueil*/
-	    .accueil {
+	    .accueil,
+        .perdu {
 	        display:flex;
 	        justify-content: center;
 	        align-items: center;
 	        flex-direction: column;
 	    }
 	    
-	    
-	    .accueil h2 {
+	    .accueil h2,
+        .perdu h2 {
 	        text-transform: uppercase;
 	        font-size :42px;
 	        letter-spacing: 8px;
 	        margin: 0px;
 	    }
 	    
-	    .accueil p {
+	    .accueil p,
+        .perdu p{
 	        font-size :24px;
 	        color :#a00000;
 	        letter-spacing: 3px;
@@ -95,7 +97,8 @@
 	        
 	    }
 	    
-	    .accueil p:hover {
+	    .accueil p:hover,
+        .perdu p:hover{
 	            cursor:pointer;
 	            background-color: white;
 	    }
@@ -166,10 +169,21 @@
 	        justify-content: space-between;
 	        margin-bottom: 10px;       
 	    }
+        
+        
+        
+        .perdu > p {
+             text-transform: uppercase;
+	        font-size :42px;
+	        letter-spacing: 8px;
+	        margin: 0px;
+            
+        }
 	    
 	    .cache {
 	        display: none;
 	    }
+        
 	    
 	</style>	
 </head>
@@ -179,7 +193,7 @@
 	    
 	    <section class="accueil ">
 	       
-	       <h2>Space Gogols</h2>
+	       <h2>Humans Invaders</h2>
 	       <p class="btn-jouer">Jouer</p>
 	       <div class="tete-gugus">
 	           <img src="images/geek.png">
@@ -219,9 +233,9 @@
 	        </div>
 	    </section>
 	    
-	    <section class="perdu">
-	        <p>Game Over !</p>
-	        <button>Rejouer</button>
+	    <section class="perdu cache">
+	        <h2>Game Over !<h2>
+	        <p class="btn-rejouer">Rejouer</p>
 	    </section>
 	    
 	</div>

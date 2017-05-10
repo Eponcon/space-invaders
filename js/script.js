@@ -1,9 +1,11 @@
-    // Ecran accueil -> Ecran jeux 
+// Ecran accueil -> Ecran jeux 
 
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
+var ecranPerdu = document.querySelector(".perdu");
 
-    // click sur le bouton jouer pour accéder à l'écran jeux
+
+// click sur le bouton jouer pour accéder à l'écran jeux
 var btnJouer = document.querySelector(".btn-jouer");
 
 btnJouer.addEventListener("click", lancerJeux);
@@ -12,6 +14,8 @@ function lancerJeux() {
     ecranAccueil.classList.add("cache");
     ecranJeux.classList.remove("cache");
 }
+
+
 
     // génère les lignes de gugus méchants ligne par ligne
 
@@ -100,100 +104,112 @@ var divTete = document.querySelector(".blc-lignes");
 divTete.style.left = 0;
 divTete.style.top = 0;
 
-function droite () {  
+function droite1 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite, 2000);
+setTimeout(droite1, 2000);
 
-function bas () {  
+function bas1 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 3000);
+setTimeout(bas1, 3000);
 
-function gauche () {  
+function gauche1 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche, 4000);
+setTimeout(gauche1, 4000);
 
-function bas () {  
+function bas2 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 5000);
+setTimeout(bas2, 5000);
 
-function droite () {  
+function droite2 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite, 6000);
+setTimeout(droite2, 6000);
 
-function bas () {  
+function bas3 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 7000);
+setTimeout(bas3, 7000);
 
-function gauche () {  
+function gauche2 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche, 8000);
+setTimeout(gauche2, 8000);
 
-function bas () {  
+function bas4 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 9000);
+setTimeout(bas4, 9000);
 
-function droite () {  
+function droite3 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite, 10000);
+setTimeout(droite3, 10000);
 
-function bas () {  
+function bas5 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 11000);
+setTimeout(bas5, 11000);
 
-function gauche () {  
+function gauche3 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche, 12000);
+setTimeout(gauche3, 12000);
 
-function bas () {  
+function bas6 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 13000);
+setTimeout(bas6, 13000);
 
-function droite () {  
+function droite4 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite, 14000);
+setTimeout(droite4, 14000);
 
-function bas () {  
+function bas7 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 15000);
+setTimeout(bas7, 15000);
 
-function gauche () {  
+function gauche4 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche, 16000);
+setTimeout(gauche4, 16000);
 
-function bas () {  
+function bas8 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas, 17000);
+setTimeout(bas8, 17000);
 
-function droite () {  
+function droite5 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite, 18000);
+setTimeout(droite5, 18000);
 
-function bas () {  
+function bas9 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+    ecranJeux.classList.add("cache");
+    ecranPerdu.classList.remove("cache");
+    
 }
-setTimeout(bas, 19000);
+setTimeout(bas9, 19000);
+
+// boutton rejouer
+var reJouer = document.querySelector(".btn-rejouer");
+
+reJouer.addEventListener("click", lancerRejouer);
+
+function lancerRejouer() {
+    ecranPerdu.classList.add("cache");
+    ecranJeux.classList.remove("cache");
+}
 
 // barre d'espace lance/tire des pillules
 
 // quand la pillule touche une tete elle disparait/explose
-
 
 
 
