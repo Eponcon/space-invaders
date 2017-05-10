@@ -90,13 +90,14 @@ document.body.onkeydown = function() {
     console.log(largeur.getBoundingClientRect());
 }
 
-//  restreindre au container la seringue
 
 // barre d'espace lance/tire des pillules
 
 // quand la pillule touche une tete elle disparait/explose
 
-// modifier la position des tetes
+// modifier la position de la div qui contient la tête des gugus
+
+
 
 
 
