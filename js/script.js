@@ -1,10 +1,13 @@
-// Ecran accueil -> Ecran jeux 
+    // Ecran accueil -> Ecran jeux 
 
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
 
 
+
 // click sur le bouton jouer pour accéder à l'écran jeux
+    // click sur le bouton jouer pour accéder à l'écran jeux
+
 var btnJouer = document.querySelector(".btn-jouer");
 
 btnJouer.addEventListener("click", lancerJeux);
@@ -14,8 +17,7 @@ function lancerJeux() {
     ecranJeux.classList.remove("cache");
 }
 
-// génère les lignes de gugus méchants ligne par ligne
-
+    // génère les lignes de gugus méchants ligne par ligne
 
     //ligne 1 de geek
 var ligneUne = document.querySelector(".ligne-1");
@@ -65,35 +67,36 @@ console.log(ligneUne);
     ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
 }
 
-
-
-// on fait apparaitre la seringue tueuse
+    // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
- 
-seringueTueuse.innerHTML += "<img src='images/seringue.png'>" + "" + "</img>";
+seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >" + "" + "</img>";
 
+    // touche gauche et droite pour déplacer la seringue
 
-// touche gauche et droite pour déplacer la seringue
-
-document.querySelector(".seringue-tueuse").style.left = 0;
-
+seringueTueuse.style.left = 0;
 
 document.body.onkeydown = function() {
-var largeur=document.querySelector('.container').availWidth;
-    
+
+    var largeur = document.querySelector('.container');   
     var e = event.keyCode;
-//    if ( > 360){
+
+    if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
         if (e == 37) { //left function
-            document.querySelector(".seringue-tueuse").style.left = (parseInt(document.querySelector(".seringue-tueuse").style.left)) - 10 + "px";
-        } else if (e == 39) { //right function
-            document.querySelector(".seringue-tueuse").style.left = (parseInt(document.querySelector(".seringue-tueuse").style.left)) + 10 + "px";
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+        } else if (e == 39) { //right function         
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
         }
 
-    
-    
-    
+    } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+
+    } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+    }
+
     console.log(seringueTueuse.getBoundingClientRect());
+    console.log(largeur.getBoundingClientRect());
 }
 // on fait apparaitre la pillule
 
@@ -102,11 +105,114 @@ var pilluleTireuse = document.querySelector(".pillule");
 pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
 //  restreindre au container la seringue
 
+
+
+// modifier la position de la div qui contient la tête des gugus
+
+
+var divTete = document.querySelector(".blc-lignes");
+
+divTete.style.left = 0;
+divTete.style.top = 0;
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 2000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 3000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 4000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 5000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 6000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 7000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 8000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 9000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 10000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 11000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 12000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 13000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 14000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 15000);
+
+function gauche () {  
+    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
+}
+setTimeout(gauche, 16000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 17000);
+
+function droite () {  
+    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
+}
+setTimeout(droite, 18000);
+
+function bas () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+}
+setTimeout(bas, 19000);
+
+
 // barre d'espace lance/tire des pillules
 
 // quand la pillule touche une tete elle disparait/explose
 
-// modifier la position des tetes
+
+
+
 
 console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
 
