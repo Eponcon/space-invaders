@@ -33,7 +33,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css"> -->
 	
 	
-	<style>
+<style>
 	    
 	    @font-face {
 			font-family: "Fipps";
@@ -183,9 +183,26 @@
 	    .cache {
 	        display: none;
 	    }
-        
+    
+    .projectile{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    }
+    
+    body > div > section.ecran-jeux > div.jeux > div.projectile > div.pillule{
+    display: flex;
+    flex-direction: column-reverse;
+    }
 	    
+    body > div > section.ecran-jeux > div.jeux > div.projectile > div.pillule > img{
+        
+        height: 50px;
+    }
+    
+
 	</style>	
+
 </head>
 
 <body>
@@ -237,7 +254,6 @@
 	        <h2>Game Over !<h2>
 	        <p class="btn-rejouer">Rejouer</p>
 	    </section>
-	    
 	</div>
 
 <footer>
