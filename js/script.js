@@ -80,32 +80,40 @@ document.body.onkeydown = function() {
 
     var largeur = document.querySelector('.container');   
     var e = event.keyCode;
+    var pilluleTireuse = document.querySelector(".pillule");
 
     if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
         if (e == 37) { //left function
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
         } else if (e == 39) { //right function         
-            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
-        }
-
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";                 
+        }  
+    
     } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
         seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
     } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
         seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
     }
-
-    console.log(seringueTueuse.getBoundingClientRect());
-    console.log(largeur.getBoundingClientRect());
+    
 }
-// on fait apparaitre la pillule
-
-var pilluleTireuse = document.querySelector(".pillule");
-
-pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
-//  restreindre au container la seringue
 
 
+
+
+
+// tir 
+
+
+//pilluleTireuse.style.top = 0;
+//    if (e == 32) {          
+//        pilluleTireuse.innerHTML += "<img src ='images/pillule.png' width='25' height='50'>" + "" + "</img>";
+//        for (i=0; i<50; i++) {
+//            pilluleTireuse.style.top = (parseInt(pilluleTireuse.style.top)) - 10 + "px";
+//        }       
+//        console.log(pilluleTireuse.getBoundingClientRect());
+//        console.log(seringueTueuse.getBoundingClientRect());
+//     }
 
 // modifier la position de la div qui contient la tête des gugus
 
@@ -205,7 +213,9 @@ function bas () {
 }
 setTimeout(bas, 19000);
 
-
+function push (){
+    
+}
 // barre d'espace lance/tire des pillules
 
 // quand la pillule touche une tete elle disparait/explose
@@ -214,7 +224,7 @@ setTimeout(bas, 19000);
 
 
 
-console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
+//console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
 
 
 

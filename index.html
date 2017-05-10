@@ -175,18 +175,19 @@
     width: 100%;
     height: 90%;
     display: flex;
+        position: relative;
+        
+        
     }
     
-    body > div > section.ecran-jeux > div.jeux > div.projectile > div.pillule{
+     .pillule{
     display: flex;
     flex-direction: column-reverse;
+         position: absolute;
+
     }
 	    
-    body > div > section.ecran-jeux > div.jeux > div.projectile > div.pillule > img{
-        
-        height: 50px;
-    }
-    
+
 	</style>	
 
 </head>
@@ -223,9 +224,11 @@
                     <div class="ligne-5"></div>
                 </div>
                   
-                <div class="projectile">
-                    <div class="seringue-tueuse"></div>    
-                    <div class="pillule"></div> 
+<!--                <div class="projectile">-->
+                    <div class="seringue-tueuse">
+                        <div class="pillule"></div> 
+<!--                    </div>    -->
+                    
                 </div> 
         </div>
     
