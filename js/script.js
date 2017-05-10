@@ -1,9 +1,9 @@
-// Ecran accueil -> Ecran jeux 
+    // Ecran accueil -> Ecran jeux 
 
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
 
-// click sur le bouton jouer pour accéder à l'écran jeux
+    // click sur le bouton jouer pour accéder à l'écran jeux
 var btnJouer = document.querySelector(".btn-jouer");
 
 btnJouer.addEventListener("click", lancerJeux);
@@ -13,8 +13,7 @@ function lancerJeux() {
     ecranJeux.classList.remove("cache");
 }
 
-// génère les lignes de gugus méchants ligne par ligne
-
+    // génère les lignes de gugus méchants ligne par ligne
 
     //ligne 1 de geek
 var ligneUne = document.querySelector(".ligne-1");
@@ -59,41 +58,36 @@ for (var i = 0; i < 11; i++) {
     ligneCinque.innerHTML += "<img src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
 }
 
-
-
-// on fait apparaitre la seringue tueuse
+    // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
- 
-seringueTueuse.innerHTML += "<img src='images/seringue.png'>" + "" + "</img>";
+seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >" + "" + "</img>";
 
+    // touche gauche et droite pour déplacer la seringue
 
-// touche gauche et droite pour déplacer la seringue
-
-document.querySelector(".seringue-tueuse").style.left = 0;
-
+seringueTueuse.style.left = 0;
 
 document.body.onkeydown = function() {
-var largeur = document.querySelector('.container').availWidth;
-    
+
+    var largeur = document.querySelector('.container');   
     var e = event.keyCode;
-//    if ( > 360){
 
-    if (e == 37) { //left function
-            seringueTueuse.style.left = 
-            (parseInt(seringueTueuse.style.left)) - 10 + "px";
-        } else if (e == 39) { //right function
-            
-            seringueTueuse.style.left = 
-            (parseInt(seringueTueuse.style.left)) + 10 + "px";
-        } 
-    
+    if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
+        if (e == 37) { //left function
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+        } else if (e == 39) { //right function         
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+        }
 
+    } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
-    
-    
-    
+    } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+    }
+
     console.log(seringueTueuse.getBoundingClientRect());
+    console.log(largeur.getBoundingClientRect());
 }
 
 //  restreindre au container la seringue
