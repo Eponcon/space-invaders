@@ -67,22 +67,24 @@
 	    }
 	    
 	     /* ecran accueil*/
-	    .accueil {
+	    .accueil,
+        .perdu {
 	        display:flex;
 	        justify-content: center;
 	        align-items: center;
 	        flex-direction: column;
 	    }
 	    
-	    
-	    .accueil h2 {
+	    .accueil h2,
+        .perdu h2 {
 	        text-transform: uppercase;
 	        font-size :42px;
 	        letter-spacing: 8px;
 	        margin: 0px;
 	    }
 	    
-	    .accueil p {
+	    .accueil p,
+        .perdu p{
 	        font-size :24px;
 	        color :#a00000;
 	        letter-spacing: 3px;
@@ -95,7 +97,8 @@
 	        
 	    }
 	    
-	    .accueil p:hover {
+	    .accueil p:hover,
+        .perdu p:hover{
 	            cursor:pointer;
 	            background-color: white;
 	    }
@@ -166,6 +169,16 @@
 	        justify-content: space-between;
 	        margin-bottom: 10px;       
 	    }
+        
+        
+        
+        .perdu > p {
+             text-transform: uppercase;
+	        font-size :42px;
+	        letter-spacing: 8px;
+	        margin: 0px;
+            
+        }
 	    
 	    .cache {
 	        display: none;
@@ -187,12 +200,21 @@
 
     }
 	    
+<<<<<<< HEAD
+=======
+    body > div > section.ecran-jeux > div.jeux > div.projectile > div.pillule > img{
+        
+        height: 50px;
+    }
+    
+>>>>>>> 92f07c818aaab8bc675054f179c132f01ed8101d
 
 	</style>	
 
 </head>
 
 <body>
+<<<<<<< HEAD
 <div class="container">
     
     <section class="accueil ">
@@ -244,6 +266,57 @@
             </div>
         </div>
     </section>
+=======
+	<div class="container">
+	    
+	    <section class="accueil ">
+	       
+	       <h2>Humans Invaders</h2>
+	       <p class="btn-jouer">Jouer</p>
+	       <div class="tete-gugus">
+	           <img src="images/geek.png">
+	           <img src="images/black.png">
+	           <img src="images/blonde.png">
+	           <img src="images/chinois.png">
+	           <img src="images/roux-2.png">    
+	       </div>
+	        
+	    </section>
+	    
+	    <section class="ecran-jeux cache">
+	        <div class="score"> </div>
+	    
+	        <div class="jeux"> 
+	                
+	            <div class="blc-lignes">
+	                <div class="ligne-1"></div>
+	                <div class="ligne-2"></div>
+	                <div class="ligne-3"></div>
+	                <div class="ligne-4"></div>
+	                <div class="ligne-5"></div>
+	            </div>
+	               
+	            <div class="seringue-tueuse"></div>    
+	                
+	        </div>
+	    	    
+	        <div class="blc-vie">
+	            <div class="img-vie">
+	                <img src="images/seringue-vie.png" alt="Seringue pixel vie 1" width="40" height="85">
+	                <img src="images/seringue-vie.png" alt="Seringue pixel vie 2" width="40" height="85">
+	                <img src="images/seringue-vie.png" alt="Seringue pixel vie 3" width="40" height="85">
+	                <img src="images/seringue-vie.png" alt="Seringue pixel vie 4" width="40" height="85">
+	                <img src="images/seringue-vie.png" alt="Seringue pixel vie 5" width="40" height="85">
+	            </div>
+	        </div>
+	    </section>
+	    
+	    <section class="perdu cache">
+	        <h2>Game Over !<h2>
+	        <p class="btn-rejouer">Rejouer</p>
+	    </section>
+	</div>
+>>>>>>> 92f07c818aaab8bc675054f179c132f01ed8101d
 
 <footer>
     
