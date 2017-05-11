@@ -12,7 +12,7 @@ body{
 	justify-content: center;
 	align-items: center;
     height: 100vh;
-	background-image: url("images/tete-mort-chinois.png");
+	background-image: url("../images/tete-mort-chinois.png");
 	background-repeat: no-repeat;
 	background-position: center;
     background-size: auto;
