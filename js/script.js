@@ -1,11 +1,8 @@
-// Ecran accueil -> Ecran jeux 
+// click sur le bouton jouer pour accéder à l'écran jeux
 
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
 var ecranPerdu = document.querySelector(".perdu");
-
-    // click sur le bouton jouer pour accéder à l'écran jeux
-
 
 var btnJouer = document.querySelector(".btn-jouer");
 
@@ -16,55 +13,41 @@ function lancerJeux() {
     ecranJeux.classList.remove("cache");
 }
 
+// génère les lignes de gugus méchants ligne par ligne
 
-
- // génère les lignes de gugus méchants ligne par ligne
-
-    //ligne 1 de geek
+	//ligne 1 de geek
 var ligneUne = document.querySelector(".ligne-1");
 console.log(ligneUne);
 
-//for (var i = 0; i < 11; i++) {
-    for( char of "abcdefghijk" ){
+for( char of "abcdefghijk" ){
     ligneUne.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>" + "" + "</img>";
 }                        
-
     //ligne 2 de roux
 var ligneDeux = document.querySelector(".ligne-2");
 console.log(ligneUne);
 
-//for (var i = 0; i < 11; i++) {
 for(char of "abcdefghijk"){
     ligneDeux.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>" + "" + "</img>";
 }
-
     //ligne 3 blonde
 var ligneTrois = document.querySelector(".ligne-3");
 console.log(ligneUne);
 
-
-//for (var i = 0; i < 11; i++) {
-    for(char of "abcdefghijk"){
+for(char of "abcdefghijk"){
     ligneTrois.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>" + "" + "</img>";
 }
-
     //ligne 4 black
 var ligneQuatre = document.querySelector(".ligne-4");
 console.log(ligneUne);
 
-
-//for (var i = 0; i < 11; i++) {
-     for(char of "abcdefghijk"){
+for(char of "abcdefghijk"){
     ligneQuatre.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>" + "" + "</img>";
 }
-
     //ligne 5 chinois
 var ligneCinque = document.querySelector(".ligne-5");
 console.log(ligneUne);
-
-
-//for (var i = 0; i < 11; i++) {
-    for(char of "abcdefghijk"){
+{
+for(char of "abcdefghijk"){
     ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
 }
 
@@ -89,7 +72,7 @@ document.body.onkeydown = function() {
         } else if (e == 39) { //right function         
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";                 
         }  
-    
+    //  restreindre au container la seringue
     } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
         seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
@@ -99,30 +82,22 @@ document.body.onkeydown = function() {
     
 }
 
-
-//var pilluleTireuse = document.querySelector(".pillule");
-//
-//pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
-//  restreindre au container la seringue
-
-
-
-
 // tir 
 
+pilluleTireuse.style.top = 0;
 
-//pilluleTireuse.style.top = 0;
-//    if (e == 32) {          
-//        pilluleTireuse.innerHTML += "<img src ='images/pillule.png' width='25' height='50'>" + "" + "</img>";
-//        for (i=0; i<50; i++) {
-//            pilluleTireuse.style.top = (parseInt(pilluleTireuse.style.top)) - 10 + "px";
-//        }       
-//        console.log(pilluleTireuse.getBoundingClientRect());
-//        console.log(seringueTueuse.getBoundingClientRect());
-//     }
+   if (e == 32) {          
+       pilluleTireuse.innerHTML += "<img src ='images/pillule.png' width='25' height='50'>" + "" + "</img>";
+
+       for (i=0; i<50; i++) {
+           pilluleTireuse.style.top = (parseInt(pilluleTireuse.style.top)) - 10 + "px";
+       }   
+
+       console.log(pilluleTireuse.getBoundingClientRect());
+       console.log(seringueTueuse.getBoundingClientRect());
+    }
 
 // modifier la position de la div qui contient la tête des gugus
-
 
 var divTete = document.querySelector(".blc-lignes");
 
@@ -217,24 +192,13 @@ setTimeout(droite5, 18000);
 function bas9 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
     ecranJeux.classList.add("cache");
-    ecranPerdu.classList.remove("cache");
-    
+    ecranPerdu.classList.remove("cache");   
 }
 
 setTimeout(bas, 19000);
 
-function push (){
-    
-}
-// barre d'espace lance/tire des pillules
-
-// quand la pillule touche une tete elle disparait/explose
-
-
-
-
-
 // boutton rejouer
+
 var reJouer = document.querySelector(".btn-rejouer");
 
 reJouer.addEventListener("click", lancerRejouer);
@@ -245,13 +209,8 @@ function lancerRejouer() {
 
 // barre d'espace lance/tire des pillules
 
+// quand la pillule touche une tete elle disparait/explose
 
-//console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
+// barre d'espace lance/tire des pillules
 
-//// quand la pillule touche une tete elle disparait/explose
-
-
-//console.log("position de la seringue tueuse:" + seringueTueuse.getBoundingClientRect());
-
-
-
+// quand la pillule touche une tete elle disparait/explose
