@@ -101,9 +101,9 @@ document.body.onkeydown = function() {
 }
 // on fait apparaitre la pillule
 
-//var pilluleTireuse = document.querySelector(".pillule");
-//
-//pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
+var pilluleTireuse = document.querySelector(".pillule");
+pilluleTireuse.innerHTML += "<img src ='images/pillule.png'>" + "" + "</img>";
+
 //  restreindre au container la seringue
 
 
@@ -208,6 +208,8 @@ function bas9 () {
     
 }
 setTimeout(bas9, 19000);
+
+// fin déplacement tête gugus 
 
 // boutton rejouer
 var reJouer = document.querySelector(".btn-rejouer");
