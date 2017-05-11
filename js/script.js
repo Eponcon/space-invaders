@@ -45,8 +45,7 @@ for(char of "abcdefghijk"){
 }
     //ligne 5 chinois
 var ligneCinque = document.querySelector(".ligne-5");
-
-{
+    
 for(char of "abcdefghijk"){
     ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
 }
@@ -64,15 +63,16 @@ document.body.onkeydown = function() {
 
     var largeur = document.querySelector('.container');   
     var e = event.keyCode;
-    var pilluleTireuse = document.querySelector(".pillule");
+ 
 
     if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
         if (e == 37) { //left function
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
         } else if (e == 39) { //right function         
-            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";                 
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";       
         }  
     //  restreindre au container la seringue
+        
     } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
         seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
@@ -83,19 +83,6 @@ document.body.onkeydown = function() {
 }
 
 // tir 
-
-pilluleTireuse.style.top = 0;
-
-   if (e == 32) {          
-       pilluleTireuse.innerHTML += "<img src ='images/pillule.png' width='25' height='50'>" + "" + "</img>";
-
-       for (i=0; i<50; i++) {
-           pilluleTireuse.style.top = (parseInt(pilluleTireuse.style.top)) - 10 + "px";
-       }   
-
-       console.log(pilluleTireuse.getBoundingClientRect());
-       console.log(seringueTueuse.getBoundingClientRect());
-    }
 
 // modifier la position de la div qui contient la tête des gugus
 
@@ -195,13 +182,14 @@ function bas9 () {
     ecranPerdu.classList.remove("cache");   
 }
 
-setTimeout(bas, 19000);
+setTimeout(bas9, 19000);
 
 // boutton rejouer
 
 var reJouer = document.querySelector(".btn-rejouer");
 
 reJouer.addEventListener("click", lancerRejouer);
+    
 function lancerRejouer() {
    ecranPerdu.classList.add("cache");
    ecranJeux.classList.remove("cache");
