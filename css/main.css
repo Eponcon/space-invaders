@@ -144,6 +144,9 @@ body{
     top: 90%;
 }
 
+.pilluleLance {
+	position: absolute;
+}
 
 /*** class cache utilisé utilisé dans js ***/
 

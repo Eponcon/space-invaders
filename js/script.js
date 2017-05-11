@@ -47,18 +47,18 @@ for(char of "abcdefghijk"){
 var ligneCinque = document.querySelector(".ligne-5");
     
 for(char of "abcdefghijk"){
-    ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
+    ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>";
 }
 
 // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
-seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >" + "" + "</img>";
+seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >";
 
 // touche gauche et droite pour déplacer la seringue
-var bougePillule = document.querySelector(".pilluleBouge");
+
 seringueTueuse.style.left = 0;
-bougePillule.style.left = 0;
+
 
 document.body.onkeydown = function() {
 
@@ -66,56 +66,47 @@ document.body.onkeydown = function() {
     var e = event.keyCode;
      
 
-    if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
         if (e == 37) { //left function
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
-        } else if (e == 39) { //right function         
-            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";       
-        }  
-    //  restreindre au container la seringue
-        
-    } else if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
-        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+            console.log((parseInt(seringueTueuse.style.left)));
+      //       if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+      //   	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
-    } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
-        seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
-    }
-    
-    if (bougePillule.getBoundingClientRect().left > largeur.getBoundingClientRect().left && bougePillule.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
-        if (e == 37) { //left function
-            bougePillule.style.left = (parseInt(bougePillule.style.left)) - 10 + "px";
+    		// } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+      //   	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+    		// }
         } else if (e == 39) { //right function         
-            bougePillule.style.left = (parseInt(bougePillule.style.left)) + 10 + "px";       
-        }  
-    //  restreindre au container la pillule
-        
-    } else if (bougePillule.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
-        bougePillule.style.left = (parseInt(bougePillule.style.left)) + 10 + "px";
+            seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+            if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+        	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
-    } else if (bougePillule.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
-        bougePillule.style.left = (parseInt(bougePillule.style.left)) - 10 + "px";
-    }
-    
-    if (e == 32){
-        var div = document.createElement("div");
-        
-        bougePillule.appendChild(div);
-        div.style.top = 0;
-        div.innerHTML += "<img class='pilluleLance' src='images/pillule.png' width='25' height='50'>" + "" + "</img>";
-        
-        
+    		} else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+        	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+    		}       
+        }  else if (e == 32){
+
+        largeur.innerHTML += '<img class="pilluleLance" src="images/pillule.png" width="25" height="50">';
+        // var mesPillule = document.querySelectorAll(".pilluleLance");
+
+        // mesPillule[mesPillule.length-1].style.left = seringueTueuse.offsetLeft + seringueTueuse.offsetWidth / 2 + "px";
+        // mesPillule[mesPillule.length-1].style.top = seringueTueuse.offsetTop - seringueTueuse.offsetHeight + "px";
+
+        // console.log((parseInt(seringueTueuse.style.left) + parseInt(seringueTueuse.offsetWidth)/2)  + "px");
+        // console.log(seringueTueuse.offsetTop - seringueTueuse.offsetHeight + "px");
         }
-
-     function bougemissile () {
-         var tousMissiles = document.querySelectorAll(".pilluleLance");
-        tousMissiles.style.top = 0;
-         tousMissiles.style.top = (parseInt(tousMissiles.style.top)) - 100 + "px";
-     }
-            
-         setInterval(bougemissile, 20);
         
 }
 
+  //       function myMove() {
+	 //  		var elem = document.querySelectorAll(".pilluleLance");   
+
+		//  	for (i = 0; i < elem.length; i++) {
+		//  		var pos = elem[i].offsetTop;
+		//  		elem[i].style.top = pos -1 + "px";
+		//  	}
+		// }
+
+  //       var id = setInterval(myMove, 2);
 
 // tir 
 
