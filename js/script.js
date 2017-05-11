@@ -17,35 +17,35 @@ function lancerJeux() {
 
 	//ligne 1 de geek
 var ligneUne = document.querySelector(".ligne-1");
-console.log(ligneUne);
+
 
 for( char of "abcdefghijk" ){
     ligneUne.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>" + "" + "</img>";
 }                        
     //ligne 2 de roux
 var ligneDeux = document.querySelector(".ligne-2");
-console.log(ligneUne);
+
 
 for(char of "abcdefghijk"){
     ligneDeux.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>" + "" + "</img>";
 }
     //ligne 3 blonde
 var ligneTrois = document.querySelector(".ligne-3");
-console.log(ligneUne);
+
 
 for(char of "abcdefghijk"){
     ligneTrois.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>" + "" + "</img>";
 }
     //ligne 4 black
 var ligneQuatre = document.querySelector(".ligne-4");
-console.log(ligneUne);
+
 
 for(char of "abcdefghijk"){
     ligneQuatre.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>" + "" + "</img>";
 }
     //ligne 5 chinois
 var ligneCinque = document.querySelector(".ligne-5");
-console.log(ligneUne);
+
 {
 for(char of "abcdefghijk"){
     ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>" + "" + "</img>";
