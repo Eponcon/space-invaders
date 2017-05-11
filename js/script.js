@@ -56,14 +56,15 @@ var seringueTueuse = document.querySelector(".seringue-tueuse");
 seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >" + "" + "</img>";
 
 // touche gauche et droite pour déplacer la seringue
-
+var bougePillule = document.querySelector(".pilluleBouge");
 seringueTueuse.style.left = 0;
+bougePillule.style.left = 0;
 
 document.body.onkeydown = function() {
 
     var largeur = document.querySelector('.container');   
     var e = event.keyCode;
- 
+     
 
     if (seringueTueuse.getBoundingClientRect().left > largeur.getBoundingClientRect().left && seringueTueuse.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
         if (e == 37) { //left function
@@ -80,7 +81,41 @@ document.body.onkeydown = function() {
         seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
     }
     
+    if (bougePillule.getBoundingClientRect().left > largeur.getBoundingClientRect().left && bougePillule.getBoundingClientRect().right < largeur.getBoundingClientRect().right){
+        if (e == 37) { //left function
+            bougePillule.style.left = (parseInt(bougePillule.style.left)) - 10 + "px";
+        } else if (e == 39) { //right function         
+            bougePillule.style.left = (parseInt(bougePillule.style.left)) + 10 + "px";       
+        }  
+    //  restreindre au container la pillule
+        
+    } else if (bougePillule.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+        bougePillule.style.left = (parseInt(bougePillule.style.left)) + 10 + "px";
+
+    } else if (bougePillule.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+        bougePillule.style.left = (parseInt(bougePillule.style.left)) - 10 + "px";
+    }
+    
+    if (e == 32){
+        var div = document.createElement("div");
+        
+        bougePillule.appendChild(div);
+        div.style.top = 0;
+        div.innerHTML += "<img class='pilluleLance' src='images/pillule.png' width='25' height='50'>" + "" + "</img>";
+        
+        
+        }
+
+     function bougemissile () {
+         var tousMissiles = document.querySelectorAll(".pilluleLance");
+        tousMissiles.style.top = 0;
+         tousMissiles.style.top = (parseInt(tousMissiles.style.top)) - 100 + "px";
+     }
+            
+         setInterval(bougemissile, 20);
+        
 }
+
 
 // tir 
 
@@ -176,29 +211,32 @@ function droite5 () {
 }
 setTimeout(droite5, 18000);
 
-function bas9 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-    ecranJeux.classList.add("cache");
-    ecranPerdu.classList.remove("cache");   
-}
-
-setTimeout(bas9, 19000);
+//function bas9 () {  
+//    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+//    ecranJeux.classList.add("cache");
+//    ecranPerdu.classList.remove("cache");   
+//}
+//
+//setTimeout(bas9, 19000);
 
 // boutton rejouer
 
-var reJouer = document.querySelector(".btn-rejouer");
+//var reJouer = document.querySelector(".btn-rejouer");
+//
+//reJouer.addEventListener("click", lancerRejouer);
+//    
+//function lancerRejouer() {
+//   ecranPerdu.classList.add("cache");
+//   ecranJeux.classList.remove("cache");
+//}
 
-reJouer.addEventListener("click", lancerRejouer);
-    
-function lancerRejouer() {
-   ecranPerdu.classList.add("cache");
-   ecranJeux.classList.remove("cache");
-}
+// barre d'espace lance/tire des pillules
+
+// quand la pillule touche une tete elle disparait/explose
 
 // barre d'espace lance/tire des pillules
 
 // quand la pillule touche une tete elle disparait/explose
 
-// barre d'espace lance/tire des pillules
 
-// quand la pillule touche une tete elle disparait/explose
+

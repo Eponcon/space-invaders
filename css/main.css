@@ -137,24 +137,17 @@ body{
 }
     
 /*** seringue et pillule ***/
-
-.pillule {
-    display: flex;
-    flex-direction: column-reverse;
-    position: absolute;
-}
-	    
-.pillule > img{    
-    height: 50px;
-}
     
-.seringue-tueuse {
+.seringue-tueuse,
+.pilluleBouge {
     position: absolute;
     top: 90%;
 }
+
 
 /*** class cache utilisé utilisé dans js ***/
 
 .cache {
     display: none;
 }
+
