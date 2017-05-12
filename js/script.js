@@ -3,6 +3,7 @@
 var ecranAccueil = document.querySelector(".accueil");
 var ecranJeux = document.querySelector(".ecran-jeux");
 var ecranPerdu = document.querySelector(".perdu");
+var divJeux = document.querySelector(".jeux");
 
 var btnJouer = document.querySelector(".btn-jouer");
 
@@ -16,40 +17,41 @@ function lancerJeux() {
 // génère les lignes de gugus méchants ligne par ligne
 
 	//ligne 1 de geek
-var ligneUne = document.querySelector(".ligne-1");
+var ligne1 = document.querySelector(".ligne-1");
 
 
 for( char of "abcdefghijk" ){
-    ligneUne.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>" + "" + "</img>";
+    ligne1.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>";
 }                        
     //ligne 2 de roux
-var ligneDeux = document.querySelector(".ligne-2");
+var ligne2 = document.querySelector(".ligne-2");
 
 
 for(char of "abcdefghijk"){
-    ligneDeux.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>" + "" + "</img>";
+    ligne2.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>";
 }
     //ligne 3 blonde
-var ligneTrois = document.querySelector(".ligne-3");
+var ligne3 = document.querySelector(".ligne-3");
 
 
 for(char of "abcdefghijk"){
-    ligneTrois.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>" + "" + "</img>";
+    ligne3.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>";
 }
     //ligne 4 black
-var ligneQuatre = document.querySelector(".ligne-4");
+var ligne4 = document.querySelector(".ligne-4");
 
 
 for(char of "abcdefghijk"){
-    ligneQuatre.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>" + "" + "</img>";
+    ligne4.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>";
 }
     //ligne 5 chinois
-var ligneCinque = document.querySelector(".ligne-5");
+var ligne5 = document.querySelector(".ligne-5");
     
 for(char of "abcdefghijk"){
-    ligneCinque.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>";
+    ligne5.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>";
 }
 
+for 
 // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
@@ -57,58 +59,82 @@ seringueTueuse.innerHTML += "<img src='images/seringue.png' width='50' >";
 
 // touche gauche et droite pour déplacer la seringue
 
-seringueTueuse.style.left = 0;
+seringueTueuse.style.left = 600 + "px";
 
+document.addEventListener("keydown", bouge);
+document.addEventListener("keyup", tir); 
 
-document.body.onkeydown = function() {
+function bouge() {
 
-    var largeur = document.querySelector('.container');   
-    var e = event.keyCode;
+	var e = event.keyCode;
+    var largeur = document.querySelector('.container');
      
-
         if (e == 37) { //left function
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
-            console.log((parseInt(seringueTueuse.style.left)));
-      //       if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
-      //   	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+	            if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+	        		seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
-    		// } else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
-      //   	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
-    		// }
+	    		} else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+	        		seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+    			}
         } else if (e == 39) { //right function         
             seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
-            if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
-        	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
+	            if (seringueTueuse.getBoundingClientRect().left == largeur.getBoundingClientRect().left){
+	        		seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) + 10 + "px";
 
-    		} else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
-        	seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
-    		}       
-        }  else if (e == 32){
-
-        largeur.innerHTML += '<img class="pilluleLance" src="images/pillule.png" width="25" height="50">';
-        // var mesPillule = document.querySelectorAll(".pilluleLance");
-
-        // mesPillule[mesPillule.length-1].style.left = seringueTueuse.offsetLeft + seringueTueuse.offsetWidth / 2 + "px";
-        // mesPillule[mesPillule.length-1].style.top = seringueTueuse.offsetTop - seringueTueuse.offsetHeight + "px";
-
-        // console.log((parseInt(seringueTueuse.style.left) + parseInt(seringueTueuse.offsetWidth)/2)  + "px");
-        // console.log(seringueTueuse.offsetTop - seringueTueuse.offsetHeight + "px");
-        }
-        
+	    		} else if (seringueTueuse.getBoundingClientRect().right == largeur.getBoundingClientRect().right){
+	        		seringueTueuse.style.left = (parseInt(seringueTueuse.style.left)) - 10 + "px";
+	    		}       
+        }  
 }
 
-  //       function myMove() {
-	 //  		var elem = document.querySelectorAll(".pilluleLance");   
 
-		//  	for (i = 0; i < elem.length; i++) {
-		//  		var pos = elem[i].offsetTop;
-		//  		elem[i].style.top = pos -1 + "px";
-		//  	}
-		// }
 
-  //       var id = setInterval(myMove, 2);
+function tir() {
+    var e = event.keyCode;
+        if (e == 32){
+	        var divPillule = document.querySelector(".divPillule");
+	        divPillule.innerHTML += '<img class="pilluleLance" src="images/pillule.png" width="25" height="50">';
+	        	
+		    var mesPillule = document.querySelectorAll(".pilluleLance");
+
+		    mesPillule[mesPillule.length-1].style.left = seringueTueuse.offsetLeft + seringueTueuse.offsetWidth / 2 + "px";
+		    mesPillule[mesPillule.length-1].style.top = seringueTueuse.offsetTop - seringueTueuse.offsetHeight / 2 + "px";
+		}			  
+} 
 
 // tir 
+
+function myMove() {
+	var divPillule = document.querySelector(".divPillule");
+	var mesPillule = document.querySelectorAll(".pilluleLance");
+
+	for (i = 0; i < mesPillule.length; i++) {
+		var pos = mesPillule[i].offsetTop;
+		mesPillule[i].style.top = pos -2 + "px";
+
+		console.log('img-5'+char);
+
+	    if (mesPillule[i].offsetTop < parseInt(ecranJeux.getBoundingClientRect().top)) {
+ 				console.log("oui");
+				divPillule.removeChild(mesPillule[i]);
+		}
+ 
+	}
+}
+
+var id = setInterval(myMove, 2);
+
+function collision() {
+
+	if (mesPillule[i].offsetTop < parseInt(document.querySelectorAll('img-5'+char).getBoundingClientRect().bottom)) {
+		ligne5.removeChild('img-5'+char);
+		divPillule.removeChild(mesPillule[i]);
+	}
+}
+
+
+// tir
 
 // modifier la position de la div qui contient la tête des gugus
 
@@ -202,24 +228,24 @@ function droite5 () {
 }
 setTimeout(droite5, 18000);
 
-//function bas9 () {  
-//    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-//    ecranJeux.classList.add("cache");
-//    ecranPerdu.classList.remove("cache");   
-//}
-//
-//setTimeout(bas9, 19000);
+function bas9 () {  
+    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
+   ecranJeux.classList.add("cache");
+   ecranPerdu.classList.remove("cache");   
+}
 
-// boutton rejouer
+setTimeout(bas9, 19000);
 
-//var reJouer = document.querySelector(".btn-rejouer");
 //
-//reJouer.addEventListener("click", lancerRejouer);
-//    
-//function lancerRejouer() {
-//   ecranPerdu.classList.add("cache");
-//   ecranJeux.classList.remove("cache");
-//}
+
+var reJouer = document.querySelector(".btn-rejouer");
+
+reJouer.addEventListener("click", lancerRejouer);
+   
+function lancerRejouer() {
+  ecranPerdu.classList.add("cache");
+  ecranJeux.classList.remove("cache");
+}
 
 // barre d'espace lance/tire des pillules
 
