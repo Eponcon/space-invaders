@@ -5,6 +5,7 @@ var ecranJeux = document.querySelector(".ecran-jeux");
 var ecranPerdu = document.querySelector(".perdu");
 var divJeux = document.querySelector(".jeux");
 
+
 var btnJouer = document.querySelector(".btn-jouer");
 
 btnJouer.addEventListener("click", lancerJeux);
@@ -20,38 +21,37 @@ function lancerJeux() {
 var ligne1 = document.querySelector(".ligne-1");
 
 
-for( char of "abcdefghijk" ){
-    ligne1.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>";
+for(i = 0 ; i<11 ; i++){
+    ligne1.innerHTML += "<div class='blcTeteImage'><img class='gugus' src='images/geek.png' width='60' height='60'></div>";
 }                        
     //ligne 2 de roux
 var ligne2 = document.querySelector(".ligne-2");
 
 
-for(char of "abcdefghijk"){
-    ligne2.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>";
+for(i = 0 ; i<11 ; i++){
+    ligne2.innerHTML += "<div class='blcTeteImage'><img class='gugus' src='images/roux-2.png' width='60' height='60'></div>";
 }
     //ligne 3 blonde
 var ligne3 = document.querySelector(".ligne-3");
 
 
-for(char of "abcdefghijk"){
-    ligne3.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>";
+for(i = 0 ; i<11 ; i++){
+    ligne3.innerHTML += "<div class='blcTeteImage'><img class='gugus' src='images/blonde.png' width='60' height='60'></div>";
 }
     //ligne 4 black
 var ligne4 = document.querySelector(".ligne-4");
 
 
-for(char of "abcdefghijk"){
-    ligne4.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>";
+for(i = 0 ; i<11 ; i++){
+    ligne4.innerHTML += "<div class='blcTeteImage'><img class='gugus' src='images/black.png' width='60' height='60'></div>";
 }
     //ligne 5 chinois
 var ligne5 = document.querySelector(".ligne-5");
     
-for(char of "abcdefghijk"){
-    ligne5.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>";
+for(i = 0 ; i<11 ; i++){
+    ligne5.innerHTML += "<div class='blcTeteImage'><img class='gugus' src='images/chinois.png' width='60' height='60'></div>";
 }
 
-for 
 // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
@@ -113,26 +113,57 @@ function myMove() {
 		var pos = mesPillule[i].offsetTop;
 		mesPillule[i].style.top = pos -2 + "px";
 
-		console.log('img-5'+char);
 
 	    if (mesPillule[i].offsetTop < parseInt(ecranJeux.getBoundingClientRect().top)) {
- 				console.log("oui");
+ 				
 				divPillule.removeChild(mesPillule[i]);
-		}
- 
+		} 
+ 		
 	}
 }
 
-var id = setInterval(myMove, 2);
+setInterval("myMove()", 1); 
 
-function collision() {
+function collision(){
+	var divPillule = document.querySelector(".divPillule");
+	var mesPillule = document.querySelectorAll(".pilluleLance");
+	var invader = document.querySelectorAll(".gugus");
+	var divTeteGugus = document.querySelectorAll(".blcTeteImage");
+	var state = false;
 
-	if (mesPillule[i].offsetTop < parseInt(document.querySelectorAll('img-5'+char).getBoundingClientRect().bottom)) {
-		ligne5.removeChild('img-5'+char);
-		divPillule.removeChild(mesPillule[i]);
+
+	for(j=0; j<mesPillule.length; j++){
+
+		var tScore = document.querySelector(".textScore")
+		var cpt = 0;
+	 	 for(i=0; i<invader.length; i++){
+	 	 	// console.log(parseInt(mesPillule[j].getBoundingClientRect().left) + ">" + parseInt(invader[i].getBoundingClientRect().left) + "&" + 
+	 	 	// (parseInt(mesPillule[j].getBoundingClientRect().left) + parseInt(mesPillule[j].getBoundingClientRect().width)) + "<=" + (parseInt(invader[i].getBoundingClientRect().left) + parseInt(invader[i].getBoundingClientRect().width)));
+
+			if(parseInt(mesPillule[j].getBoundingClientRect().left) >= parseInt(invader[i].getBoundingClientRect().left)  && (parseInt(mesPillule[j].getBoundingClientRect().left) + parseInt(mesPillule[j].getBoundingClientRect().width)) <= 
+			(parseInt(invader[i].getBoundingClientRect().left) + parseInt(invader[i].getBoundingClientRect().width))){
+				
+				if(parseInt(mesPillule[j].getBoundingClientRect().top) >= parseInt(invader[i].getBoundingClientRect().top)  && (parseInt(mesPillule[j].getBoundingClientRect().bottom) + parseInt(mesPillule[j].getBoundingClientRect().height)) <= 
+				(parseInt(invader[i].getBoundingClientRect().bottom) + parseInt(invader[i].getBoundingClientRect().height))){
+				
+					invader[i].classList.add('cache');
+					mesPillule[j].classList.add('cache');
+					state = true;
+
+					if (state == true ) {
+					cpt = cpt + 10;
+					tScore.innerHTML= + " " + cpt;
+				}
+				}
+
+			} 
+	 	}
 	}
+	
 }
 
+
+setInterval("collision()", 10);  
 
 // tir
 
@@ -146,87 +177,87 @@ divTete.style.top = 0;
 function droite1 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite1, 2000);
+setTimeout(droite1, 4000);
 
 function bas1 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas1, 3000);
+setTimeout(bas1, 8000);
 
 function gauche1 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche1, 4000);
+setTimeout(gauche1, 12000);
 
 function bas2 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas2, 5000);
+setTimeout(bas2, 16000);
 
 function droite2 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite2, 6000);
+setTimeout(droite2, 20000);
 
 function bas3 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas3, 7000);
+setTimeout(bas3, 24000);
 
 function gauche2 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche2, 8000);
+setTimeout(gauche2, 28000);
 
 function bas4 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas4, 9000);
+setTimeout(bas4, 32000);
 
 function droite3 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite3, 10000);
+setTimeout(droite3, 360000);
 
 function bas5 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas5, 11000);
+setTimeout(bas5, 40000);
 
 function gauche3 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche3, 12000);
+setTimeout(gauche3, 44000);
 
 function bas6 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas6, 13000);
+setTimeout(bas6, 48000);
 
 function droite4 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite4, 14000);
+setTimeout(droite4, 52000);
 
 function bas7 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas7, 15000);
+setTimeout(bas7, 56000);
 
 function gauche4 () {  
     divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
 }
-setTimeout(gauche4, 16000);
+setTimeout(gauche4, 60000);
 
 function bas8 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
 }
-setTimeout(bas8, 17000);
+setTimeout(bas8, 64000);
 
 function droite5 () {  
     divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
 }
-setTimeout(droite5, 18000);
+setTimeout(droite5, 68000);
 
 function bas9 () {  
     divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
@@ -234,7 +265,7 @@ function bas9 () {
    ecranPerdu.classList.remove("cache");   
 }
 
-setTimeout(bas9, 19000);
+setTimeout(bas9, 70000);
 
 //
 
