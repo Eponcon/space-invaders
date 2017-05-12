@@ -21,37 +21,36 @@ var ligne1 = document.querySelector(".ligne-1");
 
 
 for( char of "abcdefghijk" ){
-    ligne1.innerHTML += "<img id='img-1"+char+"' src='images/geek.png' width='60' height='60'>";
+    ligne1.innerHTML += "<img class='img-gugus' src='images/geek.png' width='60' height='60'>";
 }                        
     //ligne 2 de roux
 var ligne2 = document.querySelector(".ligne-2");
 
 
 for(char of "abcdefghijk"){
-    ligne2.innerHTML += "<img id='img-2"+char+"' src='images/roux-2.png' width='60' height='60'>";
+    ligne2.innerHTML += "<img class='img-gugus' src='images/roux-2.png' width='60' height='60'>";
 }
     //ligne 3 blonde
 var ligne3 = document.querySelector(".ligne-3");
 
 
 for(char of "abcdefghijk"){
-    ligne3.innerHTML += "<img id='img-3"+char+"' src='images/blonde.png' width='60' height='60'>";
+    ligne3.innerHTML += "<img class='img-gugus' src='images/blonde.png' width='60' height='60'>";
 }
     //ligne 4 black
 var ligne4 = document.querySelector(".ligne-4");
 
 
 for(char of "abcdefghijk"){
-    ligne4.innerHTML += "<img id='img-4"+char+"' src='images/black.png' width='60' height='60'>";
+    ligne4.innerHTML += "<img class='img-gugus' src='images/black.png' width='60' height='60'>";
 }
     //ligne 5 chinois
 var ligne5 = document.querySelector(".ligne-5");
     
 for(char of "abcdefghijk"){
-    ligne5.innerHTML += "<img id='img-5"+char+"' src='images/chinois.png' width='60' height='60'>";
+    ligne5.innerHTML += "<img class='img-gugus' src='images/chinois.png' width='60' height='60'>";
 }
 
-for 
 // on fait apparaitre la seringue tueuse
 
 var seringueTueuse = document.querySelector(".seringue-tueuse");
@@ -113,25 +112,50 @@ function myMove() {
 		var pos = mesPillule[i].offsetTop;
 		mesPillule[i].style.top = pos -2 + "px";
 
-		console.log('img-5'+char);
-
 	    if (mesPillule[i].offsetTop < parseInt(ecranJeux.getBoundingClientRect().top)) {
- 				console.log("oui");
 				divPillule.removeChild(mesPillule[i]);
-		}
+                collision();
+		} 
+        
+        }
  
 	}
-}
+
 
 var id = setInterval(myMove, 2);
 
-function collision() {
+//collision gugus pillule
 
-	if (mesPillule[i].offsetTop < parseInt(document.querySelectorAll('img-5'+char).getBoundingClientRect().bottom)) {
-		ligne5.removeChild('img-5'+char);
-		divPillule.removeChild(mesPillule[i]);
+function collision(){
+    
+		var divPillule = document.querySelector(".divPillule");
+        var mesPillule = document.querySelectorAll(".pilluleLance");
+		var lesGugus = document.querySelectorAll(".img-gugus");
+ console.log(lesGugus);
+ console.log(mesPillule);
+ console.log(divPillule);
+    
+    
+		for(j=0; j<mesPillule.length; j++){
+              
+			for(i=0; i<lesGugus.length; i++){
+                
+				if(parseInt(mesPillule[j].getBoundingClientRect().left) >= parseInt(lesGugus[i].getBoundingClientRect().left)  && parseInt(mesPillule[j].getBoundingClientRect().right) <= parseInt(lesGugus[i].getBoundingClientRect().right)){
+					
+                    if(parseInt(mesPillule[j].getBoundingClientRect().top) >= parseInt(lesGugus[i].getBoundingClientRect().top) && parseInt(mesPillule[j].getBoundingClientRect().bottom) <= parseInt(lesGugus[i].getBoundingClientRect().bottom)){
+						
+                        
+                        lesGugus[i].classList.add('cache');
+//                        lesGugus[i].classList.remove('invader');
+
+						mesPillule[j].classList.add('cache');
+						divPillule.removeChild(mesPillule[j]);
+
+					}
+				} 
+			}
+		}
 	}
-}
 
 
 // tir
