@@ -61,7 +61,6 @@ body{
     font-size :42px;
     letter-spacing: 8px;
     margin: 0px;
-
 }
 	    
 .accueil p:hover,
@@ -81,6 +80,7 @@ body{
     width: 100%;
     height: 5%;
 }
+
 .score p{
 	margin: 0px;
 }
@@ -126,8 +126,7 @@ body{
 	margin : 0 20px;
 	width: 40px;
 }
-        
-   
+
 /*** les vies ***/	    
 
 .img-vie {

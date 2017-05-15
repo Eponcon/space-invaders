@@ -137,8 +137,6 @@ function collision(){
 		var tScore = document.querySelector(".textScore")
 		var cpt = 0;
 	 	 for(i=0; i<invader.length; i++){
-	 	 	// console.log(parseInt(mesPillule[j].getBoundingClientRect().left) + ">" + parseInt(invader[i].getBoundingClientRect().left) + "&" + 
-	 	 	// (parseInt(mesPillule[j].getBoundingClientRect().left) + parseInt(mesPillule[j].getBoundingClientRect().width)) + "<=" + (parseInt(invader[i].getBoundingClientRect().left) + parseInt(invader[i].getBoundingClientRect().width)));
 
 			if(parseInt(mesPillule[j].getBoundingClientRect().left) >= parseInt(invader[i].getBoundingClientRect().left)  && (parseInt(mesPillule[j].getBoundingClientRect().left) + parseInt(mesPillule[j].getBoundingClientRect().width)) <= 
 			(parseInt(invader[i].getBoundingClientRect().left) + parseInt(invader[i].getBoundingClientRect().width))){
@@ -169,105 +167,53 @@ setInterval("collision()", 10);
 
 // modifier la position de la div qui contient la tête des gugus
 
+var largeur = document.querySelector('.container');
 var divTete = document.querySelector(".blc-lignes");
+var direction = "droite";
+// var wContainer = largeur.offsetWidth;
+// var RContainer = largeur.getBoundingClientRect().right;
+// console.log("largeur  droite" + RContainer);
+// var LContainer = largeur.getBoundingClientRect().left;
+// console.log("largeur gauche" +LContainer);
+var margeDroite = divTete.getBoundingClientRect().right;
+console.log("div tete droite" +margeDroite);
+var margeGauche = divTete.getBoundingClientRect().left;
+console.log("div tete gauche" +margeGauche);
+var epaisseurDivTete = divTete.getBoundingClientRect().width;
+console.log("div tete epaisseur" +epaisseurDivTete);
+// var aGauche = LContainer + epaisseurDivTete;
+// console.log("agauche" +aGauche);
+var posD = margeDroite;
+var id = setInterval(descendre, 20);
 
-divTete.style.left = 0;
-divTete.style.top = 0;
 
-function droite1 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
-}
-setTimeout(droite1, 4000);
 
-function bas1 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas1, 8000);
+function descendre(){
 
-function gauche1 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
-}
-setTimeout(gauche1, 12000);
+  if(direction == "droite"){
+        
+      if (posD < 300){
+            posD++;
+            divTete.style.left = posD + "px";
+        }
+        else{
+            divTete.style.top = divTete.offsetTop + 10 + "px";
+            direction = "gauche";
+        }
 
-function bas2 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas2, 16000);
-
-function droite2 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
-}
-setTimeout(droite2, 20000);
-
-function bas3 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas3, 24000);
-
-function gauche2 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
-}
-setTimeout(gauche2, 28000);
-
-function bas4 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas4, 32000);
-
-function droite3 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
-}
-setTimeout(droite3, 360000);
-
-function bas5 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas5, 40000);
-
-function gauche3 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
-}
-setTimeout(gauche3, 44000);
-
-function bas6 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas6, 48000);
-
-function droite4 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
-}
-setTimeout(droite4, 52000);
-
-function bas7 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas7, 56000);
-
-function gauche4 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) - 20 + "%";
-}
-setTimeout(gauche4, 60000);
-
-function bas8 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-}
-setTimeout(bas8, 64000);
-
-function droite5 () {  
-    divTete.style.left = (parseInt(divTete.style.left)) + 20 + "%";
-}
-setTimeout(droite5, 68000);
-
-function bas9 () {  
-    divTete.style.top = (parseInt(divTete.style.top)) + 5 + "%";
-   ecranJeux.classList.add("cache");
-   ecranPerdu.classList.remove("cache");   
+  } else{
+        
+      if (posD > -40){
+            posD--;
+            divTete.style.left = posD + "px";
+        }
+        else{
+            divTete.style.top = divTete.offsetTop + 10 + "px";
+            direction = "droite";
+        }  
+   }
 }
 
-setTimeout(bas9, 70000);
-
-//
 
 var reJouer = document.querySelector(".btn-rejouer");
 
